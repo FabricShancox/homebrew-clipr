@@ -7,14 +7,14 @@ cask "clipr" do
   desc "Screenshot capture and annotation tool"
   homepage "https://github.com/FabricShancox/Clipr"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Clipr.app"
 
   # Clipr isn't notarized, so Gatekeeper would block it on first launch; clearing the
   # quarantine flag lets it open normally.
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Clipr.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Clipr.app"], must_succeed: false
   end
 
   zap trash: "~/Library/Preferences/com.shancox.clipr.plist"
