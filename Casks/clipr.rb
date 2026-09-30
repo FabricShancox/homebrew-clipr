@@ -1,6 +1,6 @@
 cask "clipr" do
-  version "0.1.1"
-  sha256 "6916a899e97e02af42a425b0d096c39e698a2ae1eb7f5cfde2f4a63f8fa534b6"
+  version "0.1.2"
+  sha256 "3d07a0e2acce95323133b216307636245e9fb7a382b2013d536c44db8bdc4fe3"
 
   url "https://github.com/FabricShancox/Clipr/releases/download/v#{version}/Clipr-#{version}.zip"
   name "Clipr"
